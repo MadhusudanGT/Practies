@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 174300777}
   m_Layer: 0
-  m_Name: ------------------------------
+  m_Name: -------------------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ad367a5123ccc944a001a50e0dd68be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _listOfNumbers: 01000000010000000200000003000000
+  _listOfNumbers: 01000000020000000200000001000000
 --- !u!4 &179263062
 Transform:
   m_ObjectHideFlags: 0
@@ -344,6 +344,84 @@ MonoBehaviour:
   - ']'
   - )
   _temp: []
+--- !u!1 &475596973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 475596975}
+  - component: {fileID: 475596974}
+  m_Layer: 0
+  m_Name: Prefix Sum
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &475596974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475596973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab7684e99d763e42b6ecf686626dfe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefixListNu: 010000000200000003000000040000000500000006000000
+  _start: 2
+  _end: 4
+--- !u!4 &475596975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475596973}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &534594338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 534594339}
+  m_Layer: 0
+  m_Name: -------------------------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &534594339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534594338}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &662571502
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662571503}
   m_Layer: 0
-  m_Name: ------------------------------ (3)
+  m_Name: -------------------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -582,7 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1557094379}
   m_Layer: 0
-  m_Name: ------------------------------ (2)
+  m_Name: -------------------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -800,7 +878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1990579046}
   m_Layer: 0
-  m_Name: ------------------------------
+  m_Name: -------------------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -831,7 +909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2074344987}
   m_Layer: 0
-  m_Name: ------------------------------
+  m_Name: -------------------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -862,7 +940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2122494054}
   m_Layer: 0
-  m_Name: ------------------------------ (1)
+  m_Name: -------------------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -902,3 +980,5 @@ SceneRoots:
   - {fileID: 662571503}
   - {fileID: 179263062}
   - {fileID: 740925776}
+  - {fileID: 475596975}
+  - {fileID: 534594339}
