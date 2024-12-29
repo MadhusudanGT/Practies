@@ -23,7 +23,7 @@ public class PrefixSum : MonoBehaviour
     public int RangeSum(int[] prefixSum, int i, int j)
     {
         if (i == 0) return prefixSum[j];
-        Debug.Log(prefixSum[i - 1]+ "...i......j..." + prefixSum[j]);
+        //Debug.Log(prefixSum[i - 1]+ "...i......j..." + prefixSum[j]);
         return prefixSum[j] - prefixSum[i - 1];
     }
 
@@ -32,13 +32,13 @@ public class PrefixSum : MonoBehaviour
     {
         if (_prefixListNu.Length <= 0) 
         {
-            Debug.Log("PreFixListNu Length Was Zero..");
+            //Debug.Log("PreFixListNu Length Was Zero..");
             return;
         }
 
         if (_end >= _prefixListNu.Length)
         {
-            Debug.Log("OutOfBound Exception check the end number must be below the _prefix length");
+            //Debug.Log("OutOfBound Exception check the end number must be below the _prefix length");
             return;
         }
 
