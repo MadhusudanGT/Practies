@@ -29,7 +29,6 @@ public class FindDuplicatesInTheArray : MonoBehaviour
         }
     }
 
-
     List<int> FindAllDuplicates(int[] nums)
     {
         HashSet<int> seen = new HashSet<int>();
@@ -49,6 +48,7 @@ public class FindDuplicatesInTheArray : MonoBehaviour
 
         return new List<int>(duplicates);
     }
+
     [Button("LIST OF DUPLICATES IN HTE ARRAY")]
     public void ListOfDup()
     {
