@@ -21,7 +21,7 @@ public class RayCast : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, rayDistance))
         {
-            Debug.Log("Hit: " + hit.collider.gameObject.name);
+            //Debug.Log("Hit: " + hit.collider.gameObject.name);
 
             if (hit.collider.CompareTag("Enemy"))
             {

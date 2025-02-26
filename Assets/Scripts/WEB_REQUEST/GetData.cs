@@ -9,6 +9,7 @@ public class GetData : MonoBehaviour
 {
     [SerializeField] string _baseUrl;
     [SerializeField] List<Todo> _listOfData;
+    private string authToken;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class GetData : MonoBehaviour
     {
         using UnityWebRequest request = UnityWebRequest.Get(_baseUrl);
         request.SetRequestHeader("Accept", "application/json");
+        request.SetRequestHeader("Authorization", "Bearer " + authToken);
         // Send the request
         yield return request.SendWebRequest();
 
