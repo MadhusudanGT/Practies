@@ -28,5 +28,6 @@ public enum MoveStates
 {
     Idle,
     Walk,
-    Running
+    Running,
+    Jump
 }
