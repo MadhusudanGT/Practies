@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using System.Linq;
 
 public class Validate : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Validate : MonoBehaviour
         }
 
         int leftIndex = 0;
-        int rightIndex = _elemetns.Count -1;
+        int rightIndex = _elemetns.Count - 1;
 
         while (leftIndex < rightIndex)
         {
@@ -24,14 +25,30 @@ public class Validate : MonoBehaviour
             if (totalCount > _matchingElement)
             {
                 rightIndex--;
-            }else if (totalCount < _matchingElement)
+            }
+            else if (totalCount < _matchingElement)
             {
                 leftIndex++;
             }
             else
             {
-                Debug.Log(_elemetns[leftIndex]+"...."+ _elemetns[rightIndex]+"...."+ totalCount);
+                Debug.Log(_elemetns[leftIndex] + "...." + _elemetns[rightIndex] + "...." + totalCount);
                 break;
+            }
+        }
+    }
+
+
+    [Button("FIND MISSING ELEMENTS IN THE SEQUENCE")]
+    public void FindTheMissingElem()
+    {
+        HashSet<int> found = new HashSet<int>(_elemetns);
+        for (int i = 1; i <= _elemetns.Count; i++)
+        {
+            if (!found.Contains(i))
+            {
+                Debug.Log($"Missing element in the array was {i}");
+                return;
             }
         }
     }

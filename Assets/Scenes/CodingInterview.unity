@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b2f552f93e80645b0af566a7871964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _listOfNumbers: 0000000001000000020000000300000000000000
+  _listOfNumbers: 000000000100000002000000030000000100000003000000
 --- !u!4 &132238372
 Transform:
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ad367a5123ccc944a001a50e0dd68be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _listOfNumbers: 01000000020000000200000001000000
+  _listOfNumbers: 0500000004000000030000000200000001000000
 --- !u!4 &179263062
 Transform:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3fcb87a67b5c04fa189354903bfdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _elemetns: 0300000004000000050000000600000007000000
+  _elemetns: 020000000300000004000000050000000600000001000000
   _matchingElement: 9
 --- !u!1 &367990667
 GameObject:
@@ -343,7 +343,11 @@ MonoBehaviour:
   - '}'
   - ']'
   - )
-  _temp: []
+  _temp:
+  - '{'
+  - (
+  - '}'
+  - )
 --- !u!1 &475596973
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +743,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8841ec200ea73be429dfda0e979439a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  givenString: 0
+  arr: 0100000002000000030000000400000004000000
+  swapZeros: 010000000200000003000000040000000500000006000000
 --- !u!1 &1557094378
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9723ccb05fceb8e4f81a9cb7c6e4e662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _listOfNumbers: 0100000000000000020000000300000004000000
+  _listOfNumbers: 0200000000000000010000000300000004000000
   s1: this apple is sweet
   s2: this apple is sour
   _listOfWords:
