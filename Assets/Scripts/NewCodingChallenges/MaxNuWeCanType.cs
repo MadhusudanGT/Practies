@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+using UnityEngine.Windows;
 
 public class MaxNuWeCanType : MonoBehaviour
 {
@@ -37,28 +40,64 @@ public class MaxNuWeCanType : MonoBehaviour
     [Button("Longest Sub String !!")]
     public void LongestSubString()
     {
-        List<char> strings = new List<char>();
-        StringBuilder sb = new StringBuilder();
-        int count = 0;
+        Dictionary<char, int> map = new Dictionary<char, int>();
+        int left = 0, maxLen = 0;
+        string result = "";
 
-        for (int i = 0; i < longestSubString.Length; i++)
+        for (int right = 0; right < longestSubString.Length; right++)
         {
-            if (!strings.Contains(longestSubString[i]))
+            char c = longestSubString[right];
+            if (map.ContainsKey(c) && map[c] >= left)
             {
-                strings.Add(longestSubString[i]);
+                Debug.Log(map[c] + ".." + c);
+                left = map[c] + 1; // move left past duplicate
+            }
+
+
+            map[c] = right;
+
+            if (right - left + 1 > maxLen)
+            {
+                maxLen = right - left + 1;
+                result = longestSubString.Substring(left, maxLen);
+            }
+        }
+
+        Debug.Log($"Longest substring: {result} ... Length: {maxLen}");
+        (int length, string substring) = LongestSubString(longestSubString);
+        Debug.Log($"Input: {longestSubString}, Longest substring: {substring}, Length: {length}");
+    }
+
+    public (int, string) LongestSubString(string s)
+    {
+        HashSet<char> set = new HashSet<char>();
+        int maxLength = 0;
+        int start = 0, end = 0;
+        int bestStart = 0; // store starting index of the best substring
+
+        while (end < s.Length)
+        {
+            char currentChar = s[end];
+
+            if (!set.Contains(currentChar))
+            {
+                set.Add(currentChar);
+
+                if (end - start + 1 > maxLength)
+                {
+                    maxLength = end - start + 1;
+                    bestStart = start;
+                }
+                end++;
             }
             else
             {
-                if (sb.Length < string.Join("", strings).Length)
-                {
-                    sb.Clear();
-                    sb.Append(string.Join("", strings));
-                }
-
-                strings.Clear();
-                strings.Add(longestSubString[i]);
+                set.Remove(s[start]);
+                start++;
             }
         }
-        Debug.Log(string.Join("", strings).Length > sb.Length ? $"Word => {string.Join("", strings)}, Count : {string.Join("", strings).Length}" : $"word : {sb}, count : {sb.Length}");
+
+        string longestSubstring = s.Substring(bestStart, maxLength);
+        return (maxLength, longestSubstring);
     }
 }
