@@ -9,29 +9,22 @@ public class TwoPointers : MonoBehaviour
 
     public int[] SumTwoPoints(int[] numbers, int target)
     {
-        int left = 0;
-        int right = numbers.Length - 1;
-
-        while (left < right)
+        Dictionary<int, int> result = new Dictionary<int, int>();
+        for (int i = 0; i < numbers.Length; i++)
         {
-            int sum = numbers[left] + numbers[right];
+            int total = target - numbers[i];
 
-            if (sum == target)
+            if (result.ContainsKey(total))
             {
-                return new int[] { left + 1, right + 1 };
+                return new int[] { result[total], i };
             }
-            else if (sum < target)
+
+            if (!result.ContainsKey(total))
             {
-                left++; // Move the left pointer to increase the sum
-            }
-            else
-            {
-                right--; // Move the right pointer to decrease the sum
+                result.Add(numbers[i], i);
             }
         }
-
-        Debug.LogError("No two numbers found that add up to the target.");
-        return new int[0];
+        return new int[] { };
     }
 
     [Button("SUM OF THE TWO TARGET VALUES")]
@@ -49,7 +42,12 @@ public class TwoPointers : MonoBehaviour
 
         if (result.Length > 0)
         {
-            Debug.Log($"Indices: {string.Join(", ", result)}");
+            int sum = 0;
+            for (int i = 0; i < result.Length; i++)
+            {
+                sum += _listOfArray[result[i]];
+            }
+            Debug.Log("Total Sum Match WIth the target..." + sum + "..Index was.." + string.Join(",", result));
         }
     }
 }
