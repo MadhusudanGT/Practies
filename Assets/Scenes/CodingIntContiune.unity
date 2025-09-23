@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 220927434}
   - component: {fileID: 220927435}
   m_Layer: 0
-  m_Name: ReverseTheStrongOnlyNumber
+  m_Name: ReverseTheStringOnlyNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
