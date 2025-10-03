@@ -69,7 +69,7 @@ public class PostData : MonoBehaviour
     {
         byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
 
-        using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
+        using (UnityWebRequest request = new(url, "POST"))
         {
             request.uploadHandler = new UploadHandlerRaw(bodyRaw);
             request.downloadHandler = new DownloadHandlerBuffer();
@@ -80,6 +80,8 @@ public class PostData : MonoBehaviour
             if (request.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log("Response: " + request.downloadHandler.text);
+                string response = request.downloadHandler.text;
+                UserData data = JsonUtility.FromJson<UserData>(response);
             }
             else
             {

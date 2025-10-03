@@ -4,6 +4,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.Requests;
 
 public class GetData : MonoBehaviour
 {
@@ -40,6 +41,19 @@ public class GetData : MonoBehaviour
         }
     }
 
+    IEnumerator TestGetData(string url)
+    {
+        UnityWebRequest request = UnityWebRequest.Get(url);
+        request.SetRequestHeader("Accept", "appllication/json");
+        request.SetRequestHeader("Authorization", "Bearer " + authToken);
+        yield return request.SendWebRequest();
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            string txt = request.downloadHandler.text;
+            TodoDatas responseData = JsonUtility.FromJson<TodoDatas>(txt);
+        }
+
+    }
 }
 
 [System.Serializable]
